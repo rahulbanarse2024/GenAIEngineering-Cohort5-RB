@@ -4,18 +4,30 @@ import json
 
 # The URL and the query params, as indicated by the API spec / doc.
 # Refer https://rapidapi.com/hub
-url = "https://real-time-news-data.p.rapidapi.com/search"
-querystring = {"query":"AI Research","limit":"10","time_published":"anytime","country":"US","lang":"en"}
+# url = "https://real-time-news-data.p.rapidapi.com/search"
+# querystring = {"query":"AI Research","limit":"10","time_published":"anytime","country":"US","lang":"en"}
 
-# Add Headers to the request
+# # Add Headers to the request
+# headers = {
+# 	"x-rapidapi-key": "aaf2f390b7msheaa8d215f651e4p14658jsnfd40ab2b478",					   
+# 	"x-rapidapi-host": "real-time-news-data.p.rapidapi.com"
+# }
+
+# # Place a request and receive the response
+# response = requests.get(url, headers=headers, params=querystring)
+# response_data = response.json ()
+
+# # Align better the JSON content
+# print(json.dumps(response_data, indent=4))
+
+
+url = "https://cricbuzz-cricket.p.rapidapi.com/mcenter/v1/40381/hscard"
+
 headers = {
-	"x-rapidapi-key": "aaf2f390b7msheaa8d215f651e4p14658jsnfd40ab2b478",					   
-	"x-rapidapi-host": "real-time-news-data.p.rapidapi.com"
+	"x-rapidapi-key": "d7045e3e12msh73fdb138cce6e38p159deejsn423566f8fdae",
+	"x-rapidapi-host": "cricbuzz-cricket.p.rapidapi.com"
 }
 
-# Place a request and receive the response
-response = requests.get(url, headers=headers, params=querystring)
-response_data = response.json ()
+response = requests.get(url, headers=headers)
 
-# Align better the JSON content
-print(json.dumps(response_data, indent=4))
+print(response.json())
